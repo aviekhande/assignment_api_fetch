@@ -6,7 +6,7 @@ This is a Flutter application demonstrating API data fetching using **Clean Arch
 
 ## 📄 Features
 
-- ✅ **Fetches posts** from [JSONPlaceholder API](https://fakestoreapi.com/products)
+- ✅ **Fetches posts** from [Fake API](https://fakestoreapi.com/products)
 - 🔍 **Real-time search bar** for filtering posts by title or content
 - 🕓 **Recent search history** maintained and displayed in a horizontally scrollable list
 - 🔄 **Pull-to-refresh** functionality for reloading the posts list
@@ -20,25 +20,30 @@ This is a Flutter application demonstrating API data fetching using **Clean Arch
 - Flutter
 - Dart
 - BLoC (`flutter_bloc`)
-- HTTP Package
+- Dio Package
 - Clean Architecture Principles
-- Responsive UI with `flutter_screenutil`
 
 ---
 
 ## 📦 API Used
 
-**URL:** [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)  
+**URL:** [[https://fakestoreapi.com/products](https://fakestoreapi.com/products)]  
 This public REST API returns a list of dummy posts in the following format:
 
 ```json
 [
   {
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit..."
-  }
+        "id": 1,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "category": "men's clothing",
+        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+        }
+    }
 ]
 ```
 
@@ -60,11 +65,13 @@ cd assignment_api_fetch
 ```
 
 2. Install dependencies
-
-flutter pub get 3. Run the app
-
+```bash
+flutter pub get 
+```
+3. Run the app
+```bash
 flutter run
-
+```
 ## 🔍 How Search & History Works
 
 The search bar updates the results in real-time as you type.
