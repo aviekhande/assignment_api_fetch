@@ -15,6 +15,7 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
       super(PostsInitState()) {
     on<PostsFetchEvent>(_onPostFetchEvent);
     on<PostsSearchEvent>(_onPostsSearchEvent);
+    on<PostsResetEvent>(_onPostsResetEvent);
   }
   _onPostFetchEvent(PostsFetchEvent event, Emitter<PostsState> emit) async {
     try {
@@ -40,5 +41,9 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
       await Future.delayed(Duration(seconds: 2));
       emit(PostsLoadedState(postsData: filteredData));
     }
+  }
+  _onPostsResetEvent(PostsResetEvent event ,Emitter<PostsState> emit){
+    emit(PostsLoadedState(postsData: originalData));
+
   }
 }
